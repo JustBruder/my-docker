@@ -24,27 +24,27 @@ meu-app-docker/
 
 ## Como Rodar o Projeto Localmente?
 Se você quiser clonar este repositório e rodar o projeto na sua máquina:
-    1. Certifique-se de ter o Docker instalado no seu sistema.
-    2. Na raiz do projeto, construa a imagem Docker localmente:
+1. Certifique-se de ter o Docker instalado no seu sistema.
+2. Na raiz do projeto, construa a imagem Docker localmente:
      ```text docker build -t meu-app-java . ```
-    3. Inicie o container conectando as portas do sistema:
-     docker run -p 8080:8080 meu-app-java
-    4. Abra o navegador e acesse: http://localhost:8080 
+3. Inicie o container conectando as portas do sistema:
+     ```text docker run -p 8080:8080 meu-app-java```
+4. Abra o navegador e acesse: http://localhost:8080 
 
 ## O Pipeline de CI/CD (GitHub Actions)
 A esteira de automação foi configurada para eliminar qualquer trabalho manual de deploy. O fluxo funciona da seguinte forma:
-    1. Gatilho: O desenvolvedor faz um git push na branch principal (main).
-    2. Ambiente: O GitHub Actions inicializa uma máquina virtual isolada com ubuntu-latest.
-    3. Autenticação: A esteira faz login no Docker Hub usando chaves seguras (Repository Secrets).
-    4. Build & Push: O Dockerfile é lido, o código Java é compilado dentro do container e a imagem final é enviada para o Docker Hub com duas tags:
-       - latest (para a versão mais recente).
-       - Uma tag com a SHA (identificador único) daquele commit específico para histórico.
+1. Gatilho: O desenvolvedor faz um git push na branch principal (main).
+2. Ambiente: O GitHub Actions inicializa uma máquina virtual isolada com ubuntu-latest.
+3. Autenticação: A esteira faz login no Docker Hub usando chaves seguras (Repository Secrets).
+4. Build & Push: O Dockerfile é lido, o código Java é compilado dentro do container e a imagem final é enviada para o Docker Hub com duas tags:
+- latest (para a versão mais recente).
+- Uma tag com a SHA (identificador único) daquele commit específico para histórico.
 
 ## Executando a partir da Nuvem (Portabilidade)
 Graças ao Docker Hub, você não precisa clonar este código para rodar a aplicação. Em qualquer servidor ou computador do mundo que tenha o Docker instalado, basta executar o comando abaixo:
 ```text docker run -d -p 8080:8080 --name meu-servidor-java JustBruder/my-docker:latest ```
-    Ver logs do app: docker logs meu-servidor-java
-    Parar o app: docker stop meu-servidor-java
+Ver logs do app: docker logs meu-servidor-java
+Parar o app: docker stop meu-servidor-java
 
 ---
 
