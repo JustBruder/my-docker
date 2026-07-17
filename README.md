@@ -41,10 +41,10 @@ A esteira de automação foi configurada para eliminar qualquer trabalho manual 
 - Uma tag com a SHA (identificador único) daquele commit específico para histórico.
 
 ## Executando a partir da Nuvem (Portabilidade)
-Graças ao Docker Hub, você não precisa clonar este código para rodar a aplicação. Em qualquer servidor ou computador do mundo que tenha o Docker instalado, basta executar o comando abaixo:
+Graças ao Docker Hub, você não precisa clonar este código para rodar a aplicação. Em qualquer servidor ou computador do mundo que tenha o Docker instalado, basta executar o comando: 
 ```text docker run -d -p 8080:8080 --name meu-servidor-java JustBruder/my-docker:latest ```
-Ver logs do app: docker logs meu-servidor-java
-Parar o app: docker stop meu-servidor-java
+- Ver logs do app: docker logs meu-servidor-java
+- Parar o app: docker stop meu-servidor-java
 
 ---
 
