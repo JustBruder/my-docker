@@ -55,4 +55,3 @@ Graças ao Docker Hub, você não precisa clonar este código para rodar a aplic
 Meu LinkedIn: (https://www.linkedin.com/in/ingrid-bruder/)
 
 </div>
----
